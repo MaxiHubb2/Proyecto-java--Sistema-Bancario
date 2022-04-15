@@ -1,6 +1,6 @@
 package ar.edu.unlam.pb2;
 
-public class Cliente {
+public class Cliente{
 
 	private Integer idCliente;
 	private String nombre;
@@ -27,7 +27,6 @@ public class Cliente {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
 	
 	
 	
