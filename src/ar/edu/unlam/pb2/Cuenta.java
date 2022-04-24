@@ -4,13 +4,14 @@ public class Cuenta {
 
 	private Integer id;
 	private Cliente cliente;
-	private Double saldoInicial;
+	private Double saldoTotal;
+	public double dineroAEnviar;
 
-	public Cuenta(Integer id, Cliente cliente, Double saldoInicial) {
+	public Cuenta(Integer id, Cliente cliente, Double saldoTotal) {
 
 		this.id = id;
 		this.cliente = cliente;
-		this.saldoInicial = saldoInicial;
+		this.saldoTotal = saldoTotal;
 	
 	}
 
@@ -30,14 +31,24 @@ public class Cuenta {
 		this.cliente = cliente;
 	}
 
-	public Double getSaldoInicial() {
-		return saldoInicial;
+	public Double getSaldoTotal() {
+		return saldoTotal;
 	}
 
-	public void setSaldoInicial(Double saldoInicial) {
-		this.saldoInicial = saldoInicial;
+	public void setSaldoTotal(Double saldoTotal) {
+		this.saldoTotal = saldoTotal;
 	}
 
+	public Double montoATransferir( Double montoATransferir) {
+		return montoATransferir+saldoTotal;
+	}
+
+	
+	public Double montoARecibir(Double transferenciaRes) {
+		return transferenciaRes+saldoTotal;
+	}
+
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -62,6 +73,19 @@ public class Cuenta {
 			return false;
 		return true;
 	}
+
+	public Boolean extraer(int montoAExtraer) {
+		// TODO Auto-generated method stub
+		boolean sePudoExtraer = false;
+		
+		
+		if(montoAExtraer<=saldoTotal) {
+			sePudoExtraer = true;
+		}
+		return sePudoExtraer;
+	}
+
+	
 
 	
 }
